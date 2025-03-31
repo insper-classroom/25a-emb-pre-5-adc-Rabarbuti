@@ -25,12 +25,31 @@ void data_task(void *p) {
 
 void process_task(void *p) {
     int data = 0;
+    int i = 0;
+    int buff[5] = {0, 0, 0, 0, 0}
 
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
             // implementar filtro aqui!
+            while(i<5){
+                buff[i] = data;
+                n++;
+                div = i;
+            }
+            for (int j = 0; j < 4; j++) { //atualizar o bufferf
+                buff[j] = buff[j+1];
+            }
+            divisor = 5;
+            buff[4] = data;
 
+            int resul = 0;
 
+            for (int j = 0; j < divisor; j++) //pegar a media
+            {
+                resul += buff[j];
+            }
+
+            printf("%d \n", resul/5);
 
 
             // deixar esse delay!
