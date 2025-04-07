@@ -35,14 +35,14 @@ void process_task(void *p) {
 
             buff[i] = data;
             int sum = 0;
-            for(int j = 0; j<4, j++){
+            for(int j = 0; j<5, j++){
                 sum += buff[j];
             }
 
             div = sum/5;
 
             i ++;
-            if(i >=4){
+            if(i >=5){
                 i = 0;
             }
         
