@@ -35,19 +35,19 @@ void process_task(void *p) {
 
             buff[i] = data;
             int sum = 0;
-            for(int j = 0; j<5;j++){
+            for(int j = 0; j<4, j++){
                 sum += buff[j];
             }
 
             div = sum/5;
 
             i ++;
-            if(i >=5){
+            if(i >=4){
                 i = 0;
             }
         
 
-            printf("%d \n", div;
+            printf("%d \n", div);
 
 
             // deixar esse delay!
