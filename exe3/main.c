@@ -39,7 +39,7 @@ void process_task(void *p) {
                 sum += buff[j];
             }
 
-            media = sum/5;
+            div = sum/5;
 
             i ++;
             if(i >=5){
@@ -47,7 +47,7 @@ void process_task(void *p) {
             }
         
 
-            printf("%d \n", resul/5);
+            printf("%d \n", div;
 
 
             // deixar esse delay!
