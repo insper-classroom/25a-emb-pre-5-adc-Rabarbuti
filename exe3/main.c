@@ -32,23 +32,20 @@ void process_task(void *p) {
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
             // implementar filtro aqui!
-            while(i<5){
-                buff[i] = data;
-                i++;
-                div = i;
-            }
-            for (int j = 0; j < 4; j++) { //atualizar o bufferf
-                buff[j] = buff[j+1];
-            }
-            div = 5;
-            buff[4] = data;
 
-            int resul = 0;
-
-            for (int j = 0; j < div; j++) //pegar a media
-            {
-                resul += buff[j];
+            buff[i] = data;
+            int sum = 0;
+            for(int j = 0; j<5;j++){
+                sum += buff[j];
             }
+
+            media = sum/5;
+
+            i ++;
+            if(i >=5){
+                i = 0;
+            }
+        
 
             printf("%d \n", resul/5);
 
