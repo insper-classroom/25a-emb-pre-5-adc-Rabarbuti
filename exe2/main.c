@@ -7,15 +7,15 @@
 #include <stdio.h>
 #include "hardware/pwm.h"
 
-const int PWM_0_PIN = 4;
-const int PWM_1_PIN = 6;
+const int PWM_R_PIN = 4;
+const int PWM_G_PIN = 6;
 
 
 void led_task(void *p) {
-    gpio_set_function(PWM_0_PIN, GPIO_FUNC_PWM);
-    gpio_set_function(PWM_1_PIN, GPIO_FUNC_PWM);
-    uint slice_num_r = pwm_gpio_to_slice_num(PWM_0_PIN);
-    uint slice_num_g = pwm_gpio_to_slice_num(PWM_1_PIN);
+    gpio_set_function(PWM_R_PIN, GPIO_FUNC_PWM);
+    gpio_set_function(PWM_G_PIN, GPIO_FUNC_PWM);
+    uint slice_num_r = pwm_gpio_to_slice_num(PWM_R_PIN);
+    uint slice_num_g = pwm_gpio_to_slice_num(PWM_G_PIN);
 
     pwm_set_clkdiv(slice_num_r, 125);
     pwm_set_wrap(slice_num_r, 100);

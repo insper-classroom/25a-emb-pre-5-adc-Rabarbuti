@@ -35,7 +35,7 @@ void process_task(void *p) {
 
             buff[i] = data;
             int sum = 0;
-            for(int j = 0; j<5, j++){
+            for(int j = 0; j<5; j++){
                 sum += buff[j];
             }
 
